@@ -26,12 +26,26 @@ searchBtn.addEventListener('click', function(){
         alert("Please enter a valid value");
     }
     else{
-
+        console.log(cityName);
         FetchData();
     }
-    
    
 })
+
+
+input.addEventListener('keydown', function (e){
+
+   if (e.keyCode == 13)
+   {
+    e.preventDefault();
+    cityName = this.value;
+    FetchData();
+   }
+
+}
+)
+
+
 
 async function FetchData(){
 
@@ -64,3 +78,4 @@ function UpdateWeather(weather)
     humidity.innerHTML = `${weather.main.humidity}%`;
     wind.innerHTML = `${Math.round(weather.wind.speed)} Km/Hr`;
 }
+
