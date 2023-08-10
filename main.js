@@ -6,6 +6,7 @@ let humidity = document.getElementsByClassName('humidity')[0];
 let wind = document.getElementsByClassName('wind')[0];
 let mainImage = document.getElementsByClassName('weather-icon')[0];
 let weatherClass = document.getElementsByClassName('weather')[0];
+let loader = document.getElementById('loader');
 
 let cityName = ""
 let weather = "";
@@ -28,6 +29,7 @@ searchBtn.addEventListener('click', function(){
     else{
         console.log(cityName);
         FetchData();
+       
     }
    
 })
@@ -39,6 +41,7 @@ input.addEventListener('keydown', function (e){
    {
     e.preventDefault();
     cityName = this.value;
+   
     FetchData();
    }
 
@@ -67,6 +70,8 @@ async function FetchData(){
     }
 
     weatherClass.style.display = "block";
+    input.value = "";
+    
 
 }
 
@@ -78,4 +83,8 @@ function UpdateWeather(weather)
     humidity.innerHTML = `${weather.main.humidity}%`;
     wind.innerHTML = `${Math.round(weather.wind.speed)} Km/Hr`;
 }
+
+
+
+
 
