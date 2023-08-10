@@ -130,7 +130,19 @@ body{
     display: none;
 }
 
-
+.error-parent
+{
+    display: flex;
+    margin-top: 15px;
+    margin-left: 10px;
+    
+}
+.error
+{
+    color: red;
+    justify-content: right;
+    display: none;
+}
 
 
 
